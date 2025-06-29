@@ -50,7 +50,7 @@ foreach ($users as $user) {
     $sql = "INSERT INTO `test` (`name`, `email`, `password`) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $name, $email, $hashedPassword);
-    if ($stmt->execute()) {
+    if ($stmt->execute()) { 
         echo "<br>Record for $name inserted successfully";
     } else {
         echo "<br>Error inserting record for $name: " . $stmt->error;
